@@ -109,6 +109,84 @@
             margin-bottom: 10px;
             color: #222;
         }
+        .navbar .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 2em;
+            cursor: pointer;
+            margin-left: auto;
+        }
+        @media (max-width: 600px) {
+            .navbar .menu-toggle {
+                display: block;
+            }
+            .navbar .nav-links {
+                display: none;
+                width: 100%;
+            }
+            .navbar .nav-links.open {
+                display: flex;
+            }
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0 10px;
+                height: auto;
+            }
+            .navbar .logo {
+                margin-bottom: 8px;
+            }
+            .navbar .logo img {
+                height: 40px;
+                padding: 6px;
+                margin-left: 0;
+            }
+            .navbar .nav-links {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                margin-left: 0;
+                align-items: flex-start;
+            }
+            .navbar .nav-links a {
+                padding: 8px 0;
+                width: 100%;
+            }
+            .container {
+                flex-direction: column;
+                margin-top: 20px;
+                padding: 0 5px;
+            }
+            .visa-box {
+                width: 100%;
+                min-width: 0;
+                box-sizing: border-box;
+                padding: 0 0 20px 0;
+            }
+            .profile-section img {
+                width: 90vw;
+                max-width: 220px;
+                height: auto;
+            }
+            .profile-section .info {
+                font-size: 1em;
+            }
+            .visa-header h2, .visa-header .ref-number {
+                font-size: 1em;
+            }
+            .c-c.card-body {
+                font-size: 0.98em;
+            }
+            .my-btn.btn {
+                font-size: 1em;
+                padding: 10px 12px;
+            }
+            footer#footer .urdufooter {
+                font-size: 0.9em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -118,6 +196,7 @@
             <img src="images/Logo.png" alt="Pak Emblem">
             <!-- <span>Pak Visa</span> -->
         </div>
+        <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
         <div class="nav-links">
             <a href="#" class="active">HOME</a>
             <a href="#">GUIDELINES</a>
@@ -190,5 +269,15 @@
             </div>
         </footer>
     </div>
+<script>
+    // Hamburger menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        toggle.addEventListener('click', function() {
+            navLinks.classList.toggle('open');
+        });
+    });
+</script>
 </body>
 </html> 
